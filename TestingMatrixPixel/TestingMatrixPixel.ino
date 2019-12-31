@@ -29,7 +29,7 @@ RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false, 64);
 
 void setup() {
   int locationx = 0;
-  int locationy = 0
+  int locationy = 0;
   //location x, y is the corner of the square of the pipe area
   matrix.begin();
   
@@ -62,75 +62,75 @@ void setup() {
   // I'm unsure what is left and what is right in this case, so some of the shapes may be mixed up.
 
 
+  //corner pipe - down + right
+  //filling pipe rectangle
+  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
+  //rectangle on down side
+  matrix.drawRect(locationx + 3, locationy + 9, 6, 3, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 4, locationy + 10, 4, 1, matrix.Color444(0, 0, 0));
+  //rectangle on right side
+  matrix.drawRect(locationx + 9, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 10, locationy + 4, 1, 4, matrix.Color444(0, 0, 0));
+  //connecting rectangle(s)
+  //outer trace
+  matrix.fillRect(locationx + 4, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 8, locationy + 4, 1, 4, matrix.Color444(4, 4, 4));
+  //inner fill
+  matrix.fillRect(locationx + 5, locationy + 5, 2, 4, matrix.Color444(0, 0, 0));
+  matrix.fillRect(locationx + 7, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
+
+ //corner pipe - down + left
+  //filling pipe rectangle
+  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
+  //rectangle on down side
+  matrix.drawRect(locationx + 3, locationy + 9, 6, 3, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 4, locationy + 10, 4, 1, matrix.Color444(0, 0, 0));
+  //rectangle on left side
+  matrix.drawRect(locationx, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 1, locationy + 4, 1, 4, matrix.Color444(0,0,0));
+  //connecting rectangle(s)
+  //outer trace
+  matrix.fillRect(locationx + 4, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 3, locationy + 4, 1, 4, matrix.Color444(4, 4, 4));
+  //inner fill
+  matrix.fillRect(locationx + 5, locationy + 5, 2, 4, matrix.Color444(0, 0, 0));
+  matrix.fillRect(locationx + 3, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
+
+
+  //Corner pipe - up + right
+  //filling pipe rectangle
+  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
+  //rectangle on up side
+  matrix.drawRect(locationx + 3, locationy, 6, 3, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 4, locationy + 1, 4, 1, matrix.Color444(0,0,0));
+  //rectangle on right side
+  matrix.drawRect(locationx + 9, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 10, locationy + 4, 1, 4, matrix.Color444(0, 0, 0));
+  //connecting rectangle(s)
+  //outer trace
+  matrix.fillRect(locationx + 4, locationy + 3, 4, 5, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 8, locationy + 4, 1, 4, matrix.Color444(4, 4, 4));
+  //inner fill
+  matrix.fillRect(locationx + 5, locationy + 3, 2, 4, matrix.Color444(0, 0, 0));
+  matrix.fillRect(locationx + 7, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
+ 
   //corner pipe - up + left
   //filling pipe rectangle
   matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
   //rectangle on top side
-  matrix.drawRect(locationx + 3, locationy + 9, 6, 3, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 10, 4, 1, matrix.Color444(0, 0, 0));
+  matrix.drawRect(locationx + 3, locationy, 6, 3, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 4, locationy + 1, 4, 1, matrix.Color444(0,0,0));
   //rectangle on left side
-  matrix.drawRect(locationx + 9, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 10, locationy + 4, 1, 4, matrix.Color444(0, 0, 0));
-  //connecting rectangle(s)
-  //outer trace
-  matrix.fillRect(locationx + 4, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 8, 4, 1, matrix.Color444(4, 4, 4));
-  //inner fill
-  matrix.fillRect(locationx + 5, locationy + 5, 2, 4, matrix.Color444(0, 0, 0));
-  matrix.fillRect(locationx + 7, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
-
-  //corner pipe - up + right
-  //filling pipe rectangle
-  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
-  //rectangle on top side
-  matrix.drawRect(locationx + 3, locationy + 9, 6, 3, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 10, 4, 1, matrix.Color444(0, 0, 0));
-  //rectangle on right side
   matrix.drawRect(locationx, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
   matrix.fillRect(locationx + 1, locationy + 4, 1, 4, matrix.Color444(0,0,0));
   //connecting rectangle(s)
   //outer trace
-  matrix.fillRect(locationx + 3, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 8, 4, 1, matrix.Color444(4, 4, 4));
-  //inner fill
-  matrix.fillRect(locationx + 5, locationy + 5, 2, 4, matrix.Color444(0, 0, 0));
-  matrix.fillRect(locationx + 3, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
-
-
-  //Corner pipe - down + left
-  //filling pipe rectangle
-  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
-  //rectangle on bottom side
-  matrix.drawRect(locationx + 3, locationy, 6, 3, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 1, 4, 1, matrix.Color444(0,0,0));
-  //rectangle on left side
-  matrix.drawRect(locationx + 9, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 10, locationy + 4, 1, 4, matrix.Color444(0, 0, 0));
-  //connecting rectangle(s)
-  //outer trace
-  matrix.fillRect(locationx + 4, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 3, 4, 1, matrix.Color444(4, 4, 4));
-  //inner fill
-  matrix.fillRect(locationx + 5, locationy + 3, 2, 4, matrix.Color444(0, 0, 0));
-  matrix.fillRect(locationx + 7, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
-
-  //corner pipe - down + right
-  //filling pipe rectangle
-  matrix.fillRect(locationx, locationy, 12, 12, matrix.Color444(1, 0, 5));
-  //rectangle on bottom side
-  matrix.drawRect(locationx + 3, locationy, 6, 3, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 4, locationy + 1, 4, 1, matrix.Color444(0,0,0));
-  //rectangle on right side
-  matrix.drawRect(locationx, locationy + 3, 3, 6, matrix.Color444(4, 4, 4));
-  matrix.fillRect(locationx + 1, locationy + 4, 1, 4, matrix.Color444(0,0,0));
-  //connecting rectangle(s)
-  //outer trace
-  matrix.fillRect(locationx + 3, locationy + 4, 4, 5, matrix.Color444(4, 4, 4));
+  matrix.fillRect(locationx + 3, locationy + 4, 5, 4, matrix.Color444(4, 4, 4));
   matrix.fillRect(locationx + 4, locationy + 3, 4, 1, matrix.Color444(4, 4, 4));
   //inner fill
   matrix.fillRect(locationx + 5, locationy + 3, 2, 4, matrix.Color444(0, 0, 0));
   matrix.fillRect(locationx + 3, locationy + 5, 2, 2, matrix.Color444(0, 0, 0));
-  
+
 }
 /*
 class horizontalPipe() {
