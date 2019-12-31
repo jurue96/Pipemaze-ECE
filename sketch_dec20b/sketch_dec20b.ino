@@ -1,11 +1,9 @@
 
 #include <RGBmatrixPanel.h>
 
-/* button setup */
+/* button setup (Wire to be NC)*/
 const int switchPin = 2;
-const int ledPin = 5;
 
-int ledState = LOW;
 int currentState = LOW;
 int lastState = LOW;
 
@@ -161,7 +159,9 @@ void print_pipe(pipe cur_pipe){
 }
 
 void setup() {
+  pinMode(switchPin, INPUT_PULLUP);
   matrix.begin();
+  Serial.begin(9600);
 
   test_pipe.pos_x = 0;
   test_pipe.pos_y = 0;
@@ -262,7 +262,7 @@ void setup() {
 
 void loop() {
   int readSwitch = digitalRead(switchPin);
-
+  Serial.println(readSwitch);
   //check to see if new read is same as old state, if not then new lastDebounceTime
   if(readSwitch != lastState){
     lastDebounceTime = millis();
@@ -273,16 +273,16 @@ void loop() {
     //we only want to do something if the state changes
     if(readSwitch!=currentState){
       currentState = readSwitch;
-      if(currentState == LOW){
+      if(currentState == HIGH){
         //toggle between on and off
-        ledState = !ledState;
- //         if (ledState){
-            byte current_rot = test_pipe.rotation % 4;
-            test_pipe.rotation = (current_rot == 0) ? 1 : (test_pipe.rotation + 1);
-            print_pipe(test_pipe);   
+        byte current_rot = test_pipe.rotation % 4;
+        test_pipe.rotation = (current_rot == 0) ? 1 : (test_pipe.rotation + 1);  
+        //Serial.println(test_pipe.rotation);
+        print_pipe(test_pipe); 
       }
     }
   }
   lastState = readSwitch;
+
 
 }
