@@ -4,6 +4,9 @@
 
 // WILL NOT FIT on ARDUINO UNO -- requires a Mega, M0 or M4 board
 
+//https://docs.google.com/document/d/1LHPc7hRab_9rXOEVcCQEoFMlk9WWmERhFFJKl0r8x7w/edit?usp=sharing
+//link to this code >:D
+
 #include <RGBmatrixPanel.h>
 
 // Most of the signal pins are configurable, but the CLK pin has some
